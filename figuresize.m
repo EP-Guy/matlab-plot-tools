@@ -16,6 +16,11 @@ function figuresize( w , h , u )
 %
 % Copyright and licence information appended.
 
+switch nargin
+    case 2
+        u = 'cm';
+end
+
 p = inputParser;
 p.addRequired('width', @(x) isnumeric(x) && all(size(x)==1) );
 p.addRequired('height',@(x) isnumeric(x) && all(size(x)==1) );
